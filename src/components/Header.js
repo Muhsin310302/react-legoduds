@@ -1,7 +1,7 @@
 import ShoppingCart from "./ShoppingCart";
 import { useState } from "react";
 
-export default function Header(){
+export default function Header({cartItem, amount}){
     const [active, setActive] = useState(false)
 
     const cartHandler = () =>{
@@ -18,7 +18,7 @@ export default function Header(){
                 <span className="label">0</span>
                 <img src="images/legocart.svg" alt="Handlekurv" />
             </figure>
-            <ShoppingCart active={active} />
+            <ShoppingCart active={active} cartItem={cartItem} amount={amount} />
         </header>
     )
 }
